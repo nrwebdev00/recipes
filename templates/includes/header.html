@@ -1,44 +1,44 @@
 <header class="header">
     <div class="header-title">
-        <a href="#" class="title-link">Recipe Book</a>
+        <a href="{% url 'account_dashboard' %}" class="title-link">Recipe Book</a>
     </div>
     {% if request.user.is_authenticated %}
         <nav class="nav-bar">
             <ul>
-                <li><a 
-                        href="#" 
+                <li><a
+                        href="#"
                         {% if section == 'dashboard' %}
                             class="nav-link selected-nav"
                         {% else %}
                             class="nav-link"
                         {% endif %}
                     >My Dashboard</a></li>
-                <li><a 
-                        href="#" 
+                <li><a
+                        href="#"
                         {% if section == 'recipes' %}
                             class="nav-link selected-nav"
                         {% else %}
                             class="nav-link"
                         {% endif %}
                     >Recipes</a></li>
-                <li><a 
-                        href="#" 
+                <li><a
+                        href="#"
                         {% if section == 'people' %}
                             class="nav-link selected-nav"
                         {% else %}
                             class="nav-link"
                         {% endif %}
                     >People</a></li>
-                <li><a 
-                        href="" 
+                <li><a
+                        href=""
                         {% if section == 'createRecipe' %}
                             class="nav-link selected-nav"
                         {% else %}
                             class="nav-link"
                         {% endif %}
                     >Create Recipe</a></li>
-                <li><a 
-                        href="" 
+                <li><a
+                        href=""
                         {% if section == 'privateRecipes'  %}
                         class="nav-link selected-nav"
                         {% else %}
@@ -51,10 +51,11 @@
     <div class="header-account">
         {% if request.user.is_authenticated %}
             <div class="account-container">
-                <h3>
-                    Welcome {{ request.user.first_name | default:request.user.username }}, 
-                    <a href="#" class="logout-link nav-link">Logout</a>
-                </h3>
+                <form action="{% url 'account_logout' %}" method="post">
+                    Welcome {{ request.user.first_name | default:request.user.username }},
+                    <input type="submit" class="btn-logout" value="Logout">
+                    {% csrf_token %}
+                </form>
             </div>
         {% else %}
             <div class="account-container">

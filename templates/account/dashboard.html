@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ request.user.first_name | default:request.user.username }}: Dashboard{% endblock %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <p>Welcome {{ request.user.first_name | default:request.user.username }}, To Your Dashboard.</p>
+{% endblock %}
