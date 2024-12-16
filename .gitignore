@@ -1,0 +1,26 @@
+# Python compiled files
+*.pyc
+__pycache__/
+*$py.class
+
+# Django specific files
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Environments
+.env
+*.env
+venv/
+env/
+
+# IDE-specific files
+.idea/
+.idea/Recipes.iml
+.vscode/
+
+# Static files (if you're using a CDN or similar)
+static/
