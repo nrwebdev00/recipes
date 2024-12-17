@@ -60,7 +60,7 @@
         {% else %}
             <div class="account-container">
                 <a href="{% url 'account_login' %}" class="login-link nav-link">Please Login, or </a>
-                <a href="#" class="register-link nav-link">Register new Account.</a>
+                <a href="{% url 'account_register' %}" class="register-link nav-link">Register new Account.</a>
             </div>
         {% endif %}
     </div>
