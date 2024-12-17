@@ -3,4 +3,9 @@
 {% block content %}
     <h1>Dashboard</h1>
     <p>Welcome {{ request.user.first_name | default:request.user.username }}, To Your Dashboard.</p>
+    <p>
+        You Can 
+        <a href="{% url 'account_edit' %}" class="green-text"> edit you profiles!</a> 
+        or <a href="{% url 'password_change' %}" class='green-text'>change your password</a>
+    </p>
 {% endblock %}

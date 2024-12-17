@@ -46,6 +46,8 @@ urlpatterns = [
     # Register User URL
     path('register/', views.register, name='account_register'),
 
+    path('edit/', views.edit, name='account_edit'),
+
     # Dashboard and Index view for Accounts
     path('', views.dashboard, name='account_dashboard'),
 ]

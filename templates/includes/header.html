@@ -52,7 +52,9 @@
         {% if request.user.is_authenticated %}
             <div class="account-container">
                 <form action="{% url 'account_logout' %}" method="post">
-                    Welcome {{ request.user.first_name | default:request.user.username }},
+                    <a href="{% url 'account_edit' %}">
+                        Welcome {{ request.user.first_name | default:request.user.username }},
+                    </a>
                     <input type="submit" class="btn-logout" value="Logout">
                     {% csrf_token %}
                 </form>
