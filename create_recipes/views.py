@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    context = {'section':'recipes'}
+    return render(request, 'create_recipes/index.html', context)
