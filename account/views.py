@@ -83,7 +83,8 @@ def register(request):
                 user_form.cleaned_data['password']
             )
             new_user.save()
-            Profile.objects.create(user=new_user)
+            new_profile = Profile.objects.create(user=new_user)
+            new_profile.save()
             context = {'new_user':new_user}
             return render(
                 request,
